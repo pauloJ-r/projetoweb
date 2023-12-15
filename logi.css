@@ -1,0 +1,133 @@
+
+
+   
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .NavBar {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: space-around;
+            background-color: #1B1B1B;
+            padding: 10px;
+            color: white;
+            height: 150px;
+            margin-bottom: 50px;
+        }
+        
+        .NavBar img {
+            width: 55px;
+            height: 55px;
+        }
+        
+        .NavBar a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-size: 18px;
+            color: #DDD;
+            font-weight: 500;
+            text-decoration: none;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.336);
+        }
+        
+        .NavBar a::before {
+            display: flex;
+            align-items: center;
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #DDD;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        .NavBar a:hover::before {
+            width: 100%;
+        }
+        
+        .buttons-header {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            gap: 35px;
+        }
+        
+        .buttons-header>button {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            height: 40px;
+        }
+        
+        .button-entrar {
+            background-color: transparent;
+            color: #DDD;
+            border: 1px solid #DDD;
+        }
+        
+        .button-cadastrar {
+            border: none;
+            background-color: #DDD;
+            color: #1B1B1B;
+            font-weight: 550;
+            transition: .7s;
+            height: 40px;
+        }
+        
+        .button-cadastrar:hover {
+            border: 0.5px solid #fff;
+            box-shadow: rgb(255, 255, 255) 0px 0px 6px;
+            transition: .7s;
+        }
+
+        main {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        p {
+            color: #ff0000;
+        }
+    
+

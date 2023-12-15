@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #DDD;
+    overflow-x: hidden;
+}
+.container-home{
+    width: 100vw;
+    height: 100%;
+}
+
+.NavBar {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    background-color: #1B1B1B;
+    padding: 10px;
+    color: white;
+    height: 150px;
+}
+
+.NavBar img {
+    width: 55px;
+    height: 55px;
+}
+
+.NavBar a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    color: #DDD;
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.336);
+}
+
+.NavBar a::before {
+    display: flex;
+    align-items: center;
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #DDD;
+    transition: width 0.4s ease-in-out;
+}
+
+.NavBar a:hover::before {
+    width: 100%;
+}
+
+.buttons-header {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 35px;
+}
+
+.buttons-header>button {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.button-entrar {
+    background-color: transparent;
+    color: #DDD;
+    border: 1px solid #DDD;
+}
+
+.button-cadastrar {
+    border: none;
+    background-color: #DDD;
+    color: #1B1B1B;
+    font-weight: 550;
+    transition: .7s;
+    height: 40px;
+}
+
+.button-cadastrar:hover {
+    border: 0.5px solid #fff;
+    box-shadow: rgb(255, 255, 255) 0px 0px 6px;
+    transition: .7s;
+}
+#fundo {
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+    background: linear-gradient(90deg, rgba(247, 111, 36, 0.38) 62.48%, rgba(74, 19, 233, 0.38) 121.84%), url(imagens/fundo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 300px;
+}
+#fundo > p {
+    color: #fff;
+    font-size: 31px;
+    line-height: 45px;
+    margin: 15px;
+    width: 750px;
+    font-weight: 600;
+    text-align: center;
+}
+.color{
+    color: #4A13E9;
+}
+
+.button-inscreva {
+    font-size: 15px;
+    padding: 1em 2em;
+    font-weight: bold;
+    border-radius: 0.5em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    max-width: 20rem;
+    border-radius: 20px;
+    border: 3px solid #4A13E9;
+    transition: all 2s;
+    z-index: 1;
+    font-weight: 900;
+}
+
+.btn:hover {
+    transition: all 2s;
+}
+
+.top-fill {
+    position: relative;
+    color: #fff;
+    background: transparent;
+    overflow: hidden;
+    transition: color 0.5s ease-in, transform 0.5s ease-in-out;
+}
+
+.top-fill::before {
+    content: "";
+    position: absolute;
+    height: 90px;
+    width: 500px;
+    background: #4A13E9;
+    transform: translate(-60px, 50px);
+    transition: transform 0.45s ease-in;
+}
+
+.top-fill:hover::before {
+    content: "";
+    transform: translate(-60px, -30px);
+    z-index: -1;
+}
+
+.top-fill:active {
+    transform: scale(0.9);
+}
+#art {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    width: 100%;
+    margin-bottom: 250px;
+}
+
+#texto {
+    color: white;
+    margin: 25px;
+    padding: 25px;
+    z-index: 1;
+
+}
+
+#texto h1 {
+    padding-left: 30px;
+    margin-right: 40%;
+}
+
+#texto p {
+    margin-right: 40%;
+    padding: 30px;
+}
+
+#img {
+    position: absolute;
+    right: 110px;
+}
+
+#img img {
+    height: 490px;
+    border-radius: 8px;
+    margin-top: 50px;
+    animation: floatImage 4s ease-in-out infinite;
+    animation-delay: 3.1s;
+}
+.desenvolvedores{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.cards-dev{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+
+}
+.integrante img{                   
+    margin: 20px;
+    border-radius: 500px;
+    width: 180px;
+    height: 180px;
+}
+
+.integrante{
+    text-align: center;
+    margin: 20px;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(207deg, #4116BD 9.89%, #1A0752 109.79%);
+    box-shadow: 0px 0px 17.9px 0px rgba(0, 0, 0, 0.45);
+    border-radius: 12px;
+}
+
+.integrante h3{
+    color: var(--B-S60, #ffffff);
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+.integrante p{
+    color: var(--BW-S80, #ffc14d);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+.integrante a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icons {
+    font-size: 25px;
+    margin: 24px;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.integrante a:hover .icons{
+    height: 33px;
+    width: 33px;
+}
+
+.integrante a:hover .linkedin{
+    padding: 4px;
+    border-radius: 30px;
+    background-color: #fff;
+    color: rgb(0, 66, 165);
+}
+
+.integrante a:hover .github{
+    padding: 4px;
+    border-radius: 30px;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+}
+footer {
+    background-color: #1b1b1b;
+    width: 100%;
+}
+
+.footer_media {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 44px;
+}
+
+
+
+.footer_copyright {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    background-color: #202020;
+    font-size: 15px;
+    width: 100vw;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+
+
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
