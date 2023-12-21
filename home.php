@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-include_once 'validateToken.php'; 
+include_once 'validateToken.php';
 include_once 'connection.php';
 
 
@@ -8,18 +8,17 @@ if (!validateToken()) {
     $_SESSION['msg'] = "Error: Incorrect email or password";
     header('Location: login.php');
     exit();
-} 
+}
 
-echo "Welcome " . getName($pdo);
-
-function getLoggedInUserId() {
+function getLoggedInUserId()
+{
     include 'connection.php';
-    
-     // Consulta SQL para obter o ID do usuário com base no nome
+
+    // Consulta SQL para obter o ID do usuário com base no nome
     $sql2 = "SELECT use_id FROM user WHERE use_name = :use_name";
     // Tente se conectar ao banco de dados usando PDO
     try {
-       
+
         $use_name = getName();
 
         // Preparar e executar a consulta
@@ -44,25 +43,44 @@ function getLoggedInUserId() {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <title>studyConnect</title>
     <link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studyConnect</title>
 </head>
+
 <body>
-    <a href="logout.php">Exit</a>
-    <a href="#">Blog</a>
-    <a href="#">Sobre</a>
-    <a href="#">Linguagens</a>
-    <a href='perfil.php?user_id=<?php echo getLoggedInUserId(); ?>'>Perfil</a>
-    <h1>StudyConnect</h1>
-
-    <form method="POST" action="salvar_mensagem.php">
-        <label for="mensagem">Escreva seu texto:</label>
-        <textarea name="mensagem" id="mensagem" required></textarea><br>
-        <input type="submit" value="Enviar">
-    </form>
-
+    <header>
+        <section class="NavBar">
+            <a class="semefeito" href="home.php">
+                <img src="./imagens/icone.png" alt="">
+            </a>
+            <a href="#">Blog</a>
+            <a href="#">Sobre</a>
+            <a href="#">Linguagens</a>
+            <a href='perfil.php?user_id=<?php echo getLoggedInUserId(); ?>'>Perfil</a>
+            <a href="logout.php">Sair</a>
+        </section>
+    </header>
+  <div id="center-card">
+    <div id="card">
+        <form method="POST" action="salvar_mensagem.php">
+            <div class="card-imagem">
+            <img src="./imagens/geneton.png" alt="">
+            </div>
+            <div class="card-conteudo">
+            <textarea name="titulo" id="titulo" placeholder="Titulo"></textarea>
+            <textarea name="mensagem" id="mensagem" placeholder="Escreva seu Texto..."></textarea>
+            <textarea name="tags" id="titulo" placeholder="Adicione Tags da Tecnologia... "></textarea>
+            <input type="submit" value="Enviar">
+            </div>
+            
+        </form>
+    </div>
+    </div>
     <?php
     // Consulta SQL para obter posts e comentários associados
     $sql = "SELECT mensagens.id,mensagens.user_id, mensagens.mensagem, mensagens.data_publicacao,user.use_periodo, user.use_name,
@@ -82,6 +100,7 @@ function getLoggedInUserId() {
         if ($stmt->rowCount() > 0) {
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 // Adicionar um link para o perfil do usuário apenas ao redor do nome
+                echo "<div class=" . "publicacao>";
                 echo "<p><a href='perfil.php?user_id=" . $row['user_id'] .  "'><strong>" . $row['use_name'] . "</strong></a> - " . $row['use_periodo'] . "</p>";
 
                 echo "<p>" . $row['mensagem'] . "</p>";
@@ -90,8 +109,8 @@ function getLoggedInUserId() {
 
                 // Adicionar um link para resposta.php com um parâmetro, como o ID da mensagem
                 echo "<p><a href='resposta.php?id=" . $row['id'] . "'>Responder</a></p>";
-
                 echo "<hr>";
+                echo "</div>";
             }
         } else {
             echo "Nenhuma mensagem encontrada.";
@@ -104,4 +123,5 @@ function getLoggedInUserId() {
     $pdo = null;
     ?>
 </body>
+
 </html>
